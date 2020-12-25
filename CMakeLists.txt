@@ -210,14 +210,14 @@ ELSE()
      SET(STEL_GCC_CXX_FLAGS "${STEL_GCC_CXX_FLAGS} -diag-disable:remark -wd1875,654")
 ENDIF()
 
-# Set whether to try using C++11 when compiling. Required for Qt >= 5.7"
+# Set whether to try using C++17 when compiling. 
 IF(NOT (CMAKE_VERSION VERSION_LESS 3.1.0))
-     # Let CMake handle setting C++11 (since 3.1)
-     SET(CMAKE_CXX_STANDARD 11)
+     # Let CMake handle setting C++17 (since 3.1)
+     SET(CMAKE_CXX_STANDARD 17)
      SET(CMAKE_C_STANDARD 11)
 ELSE()
-     # Add std=c++11 to gcc flags
-     SET(STEL_GCC_CXX_FLAGS "-std=c++11 ${STEL_GCC_CXX_FLAGS}")
+     # Add std=c++17 to gcc flags
+     SET(STEL_GCC_CXX_FLAGS "-std=c++17 ${STEL_GCC_CXX_FLAGS}")
      # Add std=c11 to gcc flags
      SET(STEL_GCC_C_FLAGS "-std=c11 ${STEL_GCC_C_FLAGS}")
 ENDIF()
